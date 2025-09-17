@@ -1,0 +1,28 @@
+---
+title: "DiffReport"
+author: "MeRIPseqPipe"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(grid)
+library(pheatmap)
+```
+Heatmap DM plot 
+Heatmap DE plot
+Volcano Plot of DM
+Quadrant Plot between DE and DM
+ECDF curve
+
+```{r ,echo=FALSE}
+for (group in compare.list) {
+  print(group)
+  grid.newpage()
+  print(heatmap_dm.list[[group]])
+  grid.newpage()
+  print(heatmap_de.list[[group]]) 
+  print(volcano_dm.list[[group]])
+  print(quadrant.list[[group]])
+  print(ecdf.list[[group]])
+}
+```
